@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;rtb.appium.FirstAppiumTest&apos; to &apos;KronosContextSwitch&apos;&#x0D;&#x0A;- Original project: &apos;appium&apos;&#x0D;&#x0A;- Original element: &apos;rtb.appium.FirstAppiumTest&apos;&#x0D;&#x0A;- Renamed element: &apos;rtb.appium.KronosContextSwitch&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;FirstAppiumTest&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/test\/java&lt;rtb.appium{FirstAppiumTest.java[FirstAppiumTest" matchStrategy="1" name="KronosContextSwitch" qualified="false" references="true" similarDeclarations="false" stamp="1579695032924" textual="false" version="1.0"/>
+</session>
