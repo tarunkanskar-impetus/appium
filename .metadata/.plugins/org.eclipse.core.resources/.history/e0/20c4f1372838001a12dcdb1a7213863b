@@ -1,0 +1,5 @@
+package com.kronos.global;
+
+public class PropertyFile {
+
+}

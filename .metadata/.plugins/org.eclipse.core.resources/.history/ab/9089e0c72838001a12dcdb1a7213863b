@@ -1,0 +1,21 @@
+package com.kronos.global;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+public class PropertyFile {
+	
+	private Properties _gui_automation_properties = new Properties();
+	public final static String PROPERTY_FILENAME1 = System.getProperty("user.dir")+"\\configFile\\gui_automation.properties";
+	
+	public void GUI_automation_properties() {
+		try {
+			_gui_automation_properties.load(new FileInputStream(PROPERTY_FILENAME1));
+		
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+
+
+	}}

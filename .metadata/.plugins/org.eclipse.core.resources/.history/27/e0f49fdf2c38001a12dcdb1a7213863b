@@ -1,0 +1,61 @@
+package rtb.appium;
+
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+import com.kronos.global.PropertyFile;
+
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
+
+public class FirstAppiumTest extends PropertyFile
+{
+	
+	
+	
+	
+public static void main(String[] args) throws FileNotFoundException, IOException {
+	
+	
+	 PropertyFile prop = new PropertyFile();
+		//Set the Desired Capabilities
+		DesiredCapabilities caps = new DesiredCapabilities();
+		caps.setCapability("deviceName", "My Phone");
+		//caps.setCapability("udid", "060d0f9513c86663"); //Give Device ID of your mobile phone
+		caps.setCapability("platformName", prop.GUI_automation_properties("Android"));
+		caps.setCapability("platformVersion", prop.GUI_automation_properties("platformVersion"));
+		caps.setCapability("appPackage", prop.GUI_automation_properties("appPackage"));
+		caps.setCapability("appActivity", prop.GUI_automation_properties("appActivity"));
+		caps.setCapability("noReset", "true");
+		
+		//Instantiate Appium Driver
+		try {
+				AppiumDriver<MobileElement> driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), caps);
+				
+				driver.findElement(By.id("com.google.android.calculator:id/digit_7")).click();
+				driver.findElement(By.id("com.google.android.calculator:id/op_add")).click();
+				driver.findElement(By.id("com.google.android.calculator:id/digit_8")).click();
+				driver.findElement(By.id("com.google.android.calculator:id/eq")).click();
+				/*//Identify an element using Resource ID (exact match)
+				MobileElement searchBox = ((AndroidDriver<MobileElement>)driver).findElementByAndroidUIAutomator("new UiSelector().resourceId(\"com.google.android.calculator:id/digit_7\")");
+				System.out.println("Search Box Name - " + searchBox.getAttribute("name"));
+				searchBox.click();*/
+						
+				
+				
+				
+		} catch (MalformedURLException e) {
+			System.out.println(e.getMessage());
+		}
+		
+	}
+
+
+}

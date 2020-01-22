@@ -1,0 +1,3 @@
+baseUrl= test
+appPackage = com.google.android.calculator
+appActivity = com.android.calculator2.Calculator

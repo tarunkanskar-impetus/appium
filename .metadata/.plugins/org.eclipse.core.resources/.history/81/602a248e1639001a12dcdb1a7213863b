@@ -1,0 +1,5 @@
+baseUrl= test
+appPackage = com.google.android.calculator
+appActivity = com.android.calculator2.Calculator
+platformName = Android
+platformVersion = 6.0.1

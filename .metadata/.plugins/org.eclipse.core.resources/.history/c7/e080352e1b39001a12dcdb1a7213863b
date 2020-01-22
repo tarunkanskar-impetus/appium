@@ -1,0 +1,62 @@
+package rtb.appium;
+
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+import com.kronos.global.PropertyFile;
+
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
+
+public class FirstAppiumTest extends PropertyFile
+{
+	
+	 //static PropertyFile prop = new PropertyFile();
+	
+	
+public static void main(String[] args) throws FileNotFoundException, IOException, InterruptedException {
+	
+	
+	
+		//Set the Desired Capabilities
+		DesiredCapabilities caps = new DesiredCapabilities();
+		caps.setCapability("deviceName", "My Phone");
+		//caps.setCapability("udid", "060d0f9513c86663"); //Give Device ID of your mobile phone
+		caps.setCapability("platformName", "Android");
+		caps.setCapability("platformVersion", "7.0");
+		caps.setCapability("appPackage", "com.kronos.mobile.android");
+		caps.setCapability("appActivity", "com.kronos.mobile.android.alerts.PrerequisiteCheckActivity");
+		caps.setCapability("noReset", "true");
+		
+		//Instantiate Appium Driver
+		try {
+				AppiumDriver<MobileElement> driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), caps);
+				
+				driver.findElement(By.id("com.kronos.mobile.android:id/demo_btn")).click();
+				Thread.sleep(10000);
+				driver.findElement(By.id("com.kronos.mobile.android:id/module_list_item_title")).click();
+				driver.findElement(By.xpath("//*[text(),'Manage Requests'"));
+				
+				/*//Identify an element using Resource ID (exact match)
+				MobileElement searchBox = ((AndroidDriver<MobileElement>)driver).findElementByAndroidUIAutomator("new UiSelector().resourceId(\"com.google.android.calculator:id/digit_7\")");
+				System.out.println("Search Box Name - " + searchBox.getAttribute("name"));
+				searchBox.click();*/
+						
+				
+				
+				
+		} catch (MalformedURLException e) {
+			System.out.println(e.getMessage());
+		}
+		
+	}
+
+
+}
